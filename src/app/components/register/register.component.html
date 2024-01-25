@@ -1,0 +1,104 @@
+<!-- register.component.html -->
+
+<div class="register-container">
+  <h2>Register</h2>
+
+  <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="firstname">FirstName:</label>
+      <input type="text" id="firstname" formControlName="firstname" />
+      <div
+        *ngIf="
+          registrationForm.get('firstname')!.hasError('required') &&
+          registrationForm.get('firstname')!.touched
+        "
+      >
+        FirstName is required.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="lastname">Lastname:</label>
+      <input type="text" id="lastname" formControlName="lastname" />
+      <div
+        *ngIf="
+          registrationForm.get('lastname')!.hasError('required') &&
+          registrationForm.get('lastname')!.touched
+        "
+      >
+        LastName is required.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="text" id="email" formControlName="email" />
+      <div
+        *ngIf="
+          registrationForm.get('email')!.hasError('required') &&
+          registrationForm.get('email')!.touched
+        "
+      >
+        Email is required.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" id="password" formControlName="password" />
+      <div
+        *ngIf="
+          registrationForm.get('password')!.hasError('required') &&
+          registrationForm.get('password')!.touched
+        "
+      >
+        Password is required.
+      </div>
+      <div
+        *ngIf="
+          registrationForm.get('password')!.hasError('minlength') &&
+          registrationForm.get('password')!.touched
+        "
+      >
+        Password should have at least 6 char .
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="confirm">password confirm:</label>
+      <input type="password" id="confirm" formControlName="confirm" />
+      <div
+        *ngIf="
+          registrationForm.get('confirm')!.hasError('required') &&
+          registrationForm.get('confirm')!.touched
+        "
+      >
+        Confirm password is required.
+      </div>
+      <div
+        *ngIf="
+          registrationForm.hasError('passwordMismatch') &&
+          registrationForm.get('confirm')!.touched
+        "
+      >
+        Password and Confirm Password must match.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="job">Job:</label>
+      <select id="job" formControlName="job">
+        <option value="" disabled>Select a job</option>
+        <option *ngFor="let job of jobOptions" [value]="job.id">{{ job?.title }}</option>
+      </select>
+      <div
+        *ngIf="
+          registrationForm.get('job')!.hasError('required') &&
+          registrationForm.get('job')!.touched
+        "
+      >
+        Job is required.
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="!registrationForm.valid">Register</button>
+  </form>
+  <button type="login" class="login" (click)="navigateToLogin()">Login</button>
+</div>
