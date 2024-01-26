@@ -1,0 +1,46 @@
+<!-- schedule-request.component.html -->
+
+<div class="schedule-request-container">
+  <h2>Create Schedule Request</h2>
+
+  <form [formGroup]="requestForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="selectedDate">Select Date:</label>
+      <input type="date" id="selectedDate" formControlName="selectedDate" />
+      <!-- <div
+        *ngIf="
+          formControls.selectedDate.touched &&
+          formControls.selectedDate.errors?.required
+        "
+        class="error-message"
+      >
+        Date is required.
+      </div> -->
+      <div class="form-group">
+        <label for="shiftType">Select Shift:</label>
+        <div class="shift-buttons">
+          <button
+            type="button"
+            (click)="setShiftType('morning')"
+            [class.selected]="formControls['shiftType'].value === 'morning'"
+          >
+            Morning
+          </button>
+          <button
+            type="button"
+            (click)="setShiftType('evening')"
+            [class.selected]="formControls['shiftType'].value === 'evening'"
+          >
+            Evening
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add more form controls as needed -->
+
+    <button type="submit" [disabled]="!requestForm.valid">
+      Submit Request
+    </button>
+  </form>
+</div>

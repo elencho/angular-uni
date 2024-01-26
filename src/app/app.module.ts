@@ -14,6 +14,7 @@ import { ScheduleComponent } from './components/schedule/schedule.component';
 import { CreateJobComponent } from './admin/create-job/create-job.component';
 import { JobListComponent } from './admin/job-list/job-list.component';
 import { UserListComponent } from './admin/user-list/user-list.component';
+import { ScheduleRequestComponent } from './user/schedule-request/schedule-request.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { UserListComponent } from './admin/user-list/user-list.component';
     CreateJobComponent,
     JobListComponent,
     UserListComponent,
+    ScheduleRequestComponent,
   ],
   imports: [
     BrowserModule,

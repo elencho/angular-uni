@@ -31,4 +31,18 @@ export class ScheduleService {
   getRefreshScheduleFormObservable(): Observable<{}> {
     return this.refreshScheduleFormSubject.asObservable();
   }
+  addScheduleRequest(
+    startTime: string,
+    endTime: string,
+    userId: number
+  ): Observable<any> {
+    return this.http.post(
+      `${this.apiService.apiUrl}Worker/add-schedule-request`,
+      {
+        startTime: startTime,
+        endTime: endTime,
+        userId: userId,
+      }
+    );
+  }
 }
