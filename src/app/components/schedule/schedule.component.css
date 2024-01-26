@@ -1,0 +1,151 @@
+/* .load-holder {
+  margin-block: 40px;
+  margin-inline: auto;
+  width: 1265px;
+  height: 300px;
+  box-shadow: 3px 4px 15px 0px var(--darkGray);
+  background-color: #ffffffa0;
+  padding: 1.5%;
+  border-radius: 0.5rem;
+  background: linear-gradient(45deg, #ffffffa0, #ffffffa0, #aeaeae, #ffffffa0, #ffffffa0);
+  background-size: 350% 350%;
+  animation: loader-background 1.8s infinite linear;
+}
+
+@keyframes loader-background {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: 0 100%;
+  }
+}
+
+.table-container {
+  margin-block: 40px;
+  margin-inline: auto;
+  width: max-content;
+  max-width: 1300px;
+  flex-wrap: wrap;
+  box-shadow: 3px 4px 15px 0px var(--darkGray);
+  background-color: #ffffffa0;
+  padding: 1.5%;
+  border-radius: 0.5rem;
+  overflow-x: scroll;
+}
+
+.week-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.navigation-buttons {
+  margin-bottom: 20px;
+}
+
+.navigation-buttons button {
+  margin-right: 10px;
+}
+
+.table {
+  border-collapse: collapse;
+}
+
+tr {
+  height: 58px;
+}
+
+th,
+td {
+  border: 1px solid var(--lightGray);
+  padding: 1px 3px;
+  min-width: 160px;
+  max-width: 180px;
+  overflow: hidden;
+  height: 100%;
+}
+
+tr>th:nth-of-type(1) {
+  min-width: 0;
+  width: fit-content;
+  padding: 0 1rem;
+}
+
+th {
+  background-color: var(--darkGreen);
+  opacity: 0.75;
+  color: white;
+  text-transform: capitalize;
+}
+
+.schedule-item {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+
+.schedule-item::-webkit-scrollbar {
+  display: none;
+}
+
+.dateSpan {
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.morning-shift,
+.evening-shift {
+  line-height: 22px;
+  padding-inline-start: 0.35rem;
+  border-radius: 3px;
+  color: #fff;
+  text-transform: capitalize;
+  text-align: left;
+  font-size: 14px;
+  white-space: nowrap;
+  margin-block: 2.5px;
+}
+
+.morning-shift {
+  background-color: var(--acceptColor);
+}
+
+.evening-shift {
+  background-color: var(--errorColor);
+}
+
+.evening-shift.hoverable:hover {
+  cursor: pointer;
+  background-color: #d63535;
+}
+
+.morning-shift.hoverable:hover {
+  cursor: pointer;
+  background-color: #34a332;
+}
+
+
+td:has(.morning-shift):not(:has(.evening-shift)) .empty-shift-evening {
+  opacity: 0;
+  font-size: 14px;
+  padding-inline-start: 0.35rem;
+  margin-block: 2.5px;
+  line-height: 22px;
+  cursor: default;
+}
+
+td:has(.evening-shift):not(:has(.morning-shift)) .empty-shift-morning {
+  opacity: 0;
+  font-size: 14px;
+  padding-inline-start: 0.35rem;
+  margin-block: 2.5px;
+  line-height: 22px;
+  cursor: default;
+}
+
+td:has(.evening-shift):has(.morning-shift) .empty-shift-evening,
+td:has(.evening-shift):has(.morning-shift) .empty-shift-morning {
+  display: none;
+} */

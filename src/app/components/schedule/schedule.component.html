@@ -1,0 +1,73 @@
+<div class="load-holder" *ngIf="!showComponent"></div>
+<div class="table-container" *ngIf="showComponent">
+  <div class="week-title">{{ generateWeekTitle() }}</div>
+  <div class="navigation-buttons">
+    <button class="btn general-btn" (click)="goBackward()">
+      &#171; Previous Week
+    </button>
+    <button class="btn general-btn" (click)="goForward()">
+      Next Week &#187;
+    </button>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th></th>
+        <th *ngFor="let date of dates">
+          <span>{{ date.split(",")[0] }}</span> <br />
+          <span class="dateSpan">{{ date.split(",")[1] }}</span>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let job of distinctJobTitles">
+        <tr>
+          <th>{{ job.title }}</th>
+          <td *ngFor="let date of dates">
+            <div
+              class="schedule-item"
+              *ngFor="
+                let shift of getShiftForJobTitleAndDate(job.title, date).shifts
+              "
+            >
+              <!-- <span
+                class="empty-shift-morning"
+                *ngIf="!shift.includes('Morning')"
+                >empty</span
+              > -->
+              <span
+                class="morning-shift hoverable"
+                *ngIf="shift.includes('Morning') && isAdmin"
+              >
+                {{ shift.split("+")[1].slice(10) }}
+              </span>
+              <span
+                class="morning-shift"
+                *ngIf="shift.includes('Morning') && !isAdmin"
+              >
+                {{ shift.split("+")[1].slice(10) }}
+              </span>
+              <span
+                class="evening-shift hoverable"
+                *ngIf="shift.includes('Evening') && isAdmin"
+              >
+                {{ shift.split("+")[1].slice(10) }}
+              </span>
+              <span
+                class="evening-shift"
+                *ngIf="shift.includes('Evening') && !isAdmin"
+              >
+                {{ shift.split("+")[1].slice(10) }}
+              </span>
+              <!-- <span
+                class="empty-shift-evening"
+                *ngIf="!shift.includes('Evening')"
+                >empty</span
+              > -->
+            </div>
+          </td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+</div>

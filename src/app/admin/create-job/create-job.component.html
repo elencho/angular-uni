@@ -1,0 +1,17 @@
+<!-- create-job.component.html -->
+
+<div class="create-job-container">
+  <h2>Create New Job</h2>
+
+  <form [formGroup]="jobForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Job Name:</label>
+      <input type="text" id="name" formControlName="name" />
+      <div *ngIf="formControls['name'].touched" class="error-message">
+        Job Name is required.
+      </div>
+    </div>
+
+    <button type="submit">Create Job</button>
+  </form>
+</div>

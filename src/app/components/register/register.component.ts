@@ -69,23 +69,18 @@ export class RegisterComponent {
 
   onSubmit() {
     if (this?.registrationForm?.valid) {
-      // {
-      //   firstName: firstName,
-      //   lastName: lastName,
-      //   email: email,
-      //   password: password,
-      //   jobId: jobId,
-      // },
       const firstname = this.registrationForm.get('firstname')?.value;
       const lastname = this.registrationForm.get('lastname')?.value;
       const email = this.registrationForm.get('email')?.value;
       const password = this.registrationForm.get('password')?.value;
-      const jobId = this.registrationForm.get('jobId')?.value as number | null;
+      const jobId = this.registrationForm.get('job')?.value;
       this.userService
         .register(firstname, lastname, email, password, jobId)
         .subscribe(
           (data) => {
-            // navigate to main
+            if (data) {
+              this.router.navigate(['/login']);
+            }
           },
           (error) => {
             console.error('Error fetching jobs:', error);

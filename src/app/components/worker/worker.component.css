@@ -1,0 +1,36 @@
+.navbar {
+  background-color: #333;
+  padding: 10px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar-brand {
+  font-size: 18px;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-links a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.content {
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+.content h2 {
+  color: #333;
+}
+
+.content p {
+  color: #555;
+}
