@@ -45,4 +45,22 @@ export class ScheduleService {
       }
     );
   }
+  // approveScheduleRequest(scheduleId: number): Observable<any> {
+  //   return this.http.post(
+  //     `${this.apiService.apiUrl}Admin/approve-schedule-request`,
+  //     {
+  //       scheduleId: scheduleId,
+  //     }
+  //   );
+  // }
+  approveSchedule(scheduleId: number): Observable<any> {
+    const params = { scheduleId: scheduleId.toString() };
+    return this.http.post(
+      `${this.apiService.apiUrl}Admin/approve-schedule-request`,
+      null,
+      {
+        params,
+      }
+    );
+  }
 }

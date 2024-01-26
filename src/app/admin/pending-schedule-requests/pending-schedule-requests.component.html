@@ -1,0 +1,15 @@
+<!-- pending-schedule-requests.component.html -->
+
+<div class="pending-requests-container">
+  <h2>Pending Schedule Requests</h2>
+
+  <ul>
+    <li *ngFor="let request of unapprovedSchedules" [value]="request.id">
+      <!-- Display relevant information for each pending request -->
+      {{ request.firstName }} {{ request.lastName }} is waiting for approve -
+      {{ request.startTime }}
+      <!-- Add more details as needed -->
+      <button type="button" (click)="approveScheduleRequest(request.id)">Approve</button>
+    </li>
+  </ul>
+</div>
